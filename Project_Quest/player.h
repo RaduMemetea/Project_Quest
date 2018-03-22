@@ -1,6 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include <string>
+
 class player
 {
     public:
@@ -14,12 +15,11 @@ class player
 
     private:
         std::string Name;
-        int HP;
-        int HP_A;
-        char Gender;
-        int Age;
+        int HP_P;
+        int HP_B;
         int Money;
-        short Weapon_DMG;
+        short Weapon_DMG_Min;
+        short Weapon_DMG_Max;
         short Armor;
 
 };

@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1521662522 source:c:\users\radu m\documents\github\project_quest\project_quest\main.cpp
+	<iostream>
+	<string>
+	<bits/stdc++.h>
+	"player.h"
+	"Story_Node.h"
+	"Enemy.h"
+
+1521662959 c:\users\radu m\documents\github\project_quest\project_quest\player.h
+	<string>
+
+1521661950 source:c:\users\radu m\documents\github\project_quest\project_quest\player.cpp
+	"player.h"
+	<iostream>
+	<string>
+	<bits/stdc++.h>
+
+1521638646 source:c:\users\radu m\documents\github\project_quest\project_quest\story_node.cpp
+	"Story_Node.h"
+	<string>
+	<fstream>
+	<iostream>
+
+1521637618 c:\users\radu m\documents\github\project_quest\project_quest\story_node.h
+	<string>
+
+1521639759 source:c:\users\radu m\documents\github\project_quest\project_quest\battle_stage.cpp
+	"Battle_Stage.h"
+
+1521640771 c:\users\radu m\documents\github\project_quest\project_quest\battle_stage.h
+
+1521662522 source:c:\users\radu m\documents\github\project_quest\project_quest\enemy.cpp
+	"Enemy.h"
+	<fstream>
+	<random>
+	<time.h>
+	<string>
+	<iostream>
+
+1521661930 c:\users\radu m\documents\github\project_quest\project_quest\enemy.h
+	<string>
+

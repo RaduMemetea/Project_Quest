@@ -1,0 +1,16 @@
+15
+Troll
+Goblin
+Slime
+Ooze
+Orc
+Wolf
+Vampire
+Rat
+Dragon
+Dwarf
+Lizard
+Skeleton
+Witch
+Bear
+Crow
