@@ -33,3 +33,8 @@ void player::preluare_nou()
     system("cls");
 }
 
+void player::point_to_HP()
+{
+    this->HP_P-=1;
+    this->HP_B=100;
+}

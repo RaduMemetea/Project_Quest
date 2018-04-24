@@ -17,7 +17,7 @@ Enemy::Enemy()
         std::getline(en,name);
     this->E_Name=name;
 
-    this->HP=100;
+    this->EHP=100;
     this->Armor=5+rand()%21;    ///armura intre 6-25
     this->Weapon_DMG_Min=2+rand()%4;
     this->Weapon_DMG_Max=10+rand()%6;   ///dmg intre 2-5 si 10-15
@@ -26,4 +26,5 @@ Enemy::Enemy()
 Enemy::~Enemy()
 {
     //dtor
+
 }

@@ -32,12 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Battle_Stage.cpp" />
-		<Unit filename="Battle_Stage.h" />
 		<Unit filename="Enemy.cpp" />
 		<Unit filename="Enemy.h" />
-		<Unit filename="Story_Node.cpp" />
-		<Unit filename="Story_Node.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="player.cpp" />
 		<Unit filename="player.h" />
