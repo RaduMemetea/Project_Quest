@@ -28,7 +28,7 @@ void player::preluare_nou()
 {
     std::string name;
     std::cout<<"Name: ";
-    std::getline(std::cin,name);
+//    std::getline(std::cin,name);
     this->Name=name;
     system("cls");
 }

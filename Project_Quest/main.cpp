@@ -6,6 +6,7 @@
 #include "player.h"
 #include "Enemy.h"
 #include "List_Chapter.h"
+#include "List_Dialog.h"
 
 using std::cout;
 using std::cin;
@@ -223,9 +224,10 @@ int main()
     system("color A");
     player a;
 
-    test(a);
-    test(a);///probleme
+//    test(a);
+//    test(a);///probleme
 
+    List_Dialog aaa;
 
 
 }

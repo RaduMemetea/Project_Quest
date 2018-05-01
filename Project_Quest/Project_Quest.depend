@@ -1,36 +1,43 @@
 # depslib dependency file v1.0
-1521662522 source:c:\users\radu m\documents\github\project_quest\project_quest\main.cpp
+1525015597 source:c:\users\radu m\documents\github\project_quest\project_quest\main.cpp
 	<iostream>
 	<string>
 	<bits/stdc++.h>
 	"player.h"
-	"Story_Node.h"
 	"Enemy.h"
+	"List_Chapter.h"
+	"List_Dialog.h"
 
-1521662959 c:\users\radu m\documents\github\project_quest\project_quest\player.h
+1524492664 c:\users\radu m\documents\github\project_quest\project_quest\player.h
 	<string>
 
-1521661950 source:c:\users\radu m\documents\github\project_quest\project_quest\player.cpp
+1525013304 source:c:\users\radu m\documents\github\project_quest\project_quest\player.cpp
 	"player.h"
 	<iostream>
 	<string>
 	<bits/stdc++.h>
+	<random>
+	<time.h>
 
-1521638646 source:c:\users\radu m\documents\github\project_quest\project_quest\story_node.cpp
+1521642246 source:c:\users\radu m\documents\github\project_quest\project_quest\story_node.cpp
 	"Story_Node.h"
 	<string>
 	<fstream>
 	<iostream>
 
-1521637618 c:\users\radu m\documents\github\project_quest\project_quest\story_node.h
+1521641218 c:\users\radu m\documents\github\project_quest\project_quest\story_node.h
 	<string>
 
-1521639759 source:c:\users\radu m\documents\github\project_quest\project_quest\battle_stage.cpp
+1522242300 source:c:\users\radu m\documents\github\project_quest\project_quest\battle_stage.cpp
 	"Battle_Stage.h"
+	<string>
+	<fstream>
 
-1521640771 c:\users\radu m\documents\github\project_quest\project_quest\battle_stage.h
+1522072168 c:\users\radu m\documents\github\project_quest\project_quest\battle_stage.h
+	"player.h"
+	"Enemy.h"
 
-1521662522 source:c:\users\radu m\documents\github\project_quest\project_quest\enemy.cpp
+1522675419 source:c:\users\radu m\documents\github\project_quest\project_quest\enemy.cpp
 	"Enemy.h"
 	<fstream>
 	<random>
@@ -38,6 +45,21 @@
 	<string>
 	<iostream>
 
-1521661930 c:\users\radu m\documents\github\project_quest\project_quest\enemy.h
+1524492664 c:\users\radu m\documents\github\project_quest\project_quest\enemy.h
 	<string>
+
+1524595902 c:\users\radu m\documents\github\project_quest\project_quest\list_chapter.h
+
+1524597118 source:c:\users\radu m\documents\github\project_quest\project_quest\list_chapter.cpp
+	"List_Chapter.h"
+	<iostream>
+	<string>
+
+1525015597 c:\users\radu m\documents\github\project_quest\project_quest\list_dialog.h
+
+1525016263 source:c:\users\radu m\documents\github\project_quest\project_quest\list_dialog.cpp
+	"List_Dialog.h"
+	<string>
+	<fstream>
+	<iostream>
 
