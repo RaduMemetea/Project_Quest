@@ -21,7 +21,7 @@ void Dead_End()
     exit(1);
 }
 
-
+/**
 struct Dialog
 {
     struct Dialog *prev;
@@ -36,7 +36,7 @@ struct Capitol
     struct Dialog L;
     struct Capitol *next;
 };
-
+*/
 
 
 
@@ -222,13 +222,8 @@ void Sentence(std::string &b)       /// ( aNDrei gabRi8eL )-->( Andrei Gabri8el)
 int main()
 {
     system("color A");
-    player a;
 
-//    test(a);
-//    test(a);///probleme
-
-    List_Dialog aaa;
-
+    List_Chapter C1;
 
 }
 

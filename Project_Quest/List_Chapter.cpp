@@ -1,27 +1,27 @@
 #include "List_Chapter.h"
 #include <iostream>
 #include <string>
+#include <fstream>
+
+#include "List_Dialog.h"
+
 using std::string;
 
-struct Dialog
-{
-    struct Dialog *prev;
-    unsigned int ID_Nod, ID_NextA, ID_NextB, ID_NextC;
-    string Voce;
-    string Text;
-    struct Dialog *next_A,*next_B,*next_C;
-};
+typedef unsigned int uint;
 
 struct Capitol
 {
-    struct Dialog L;
+    List_Dialog D;
     struct Capitol *next;
+
 };
 
 List_Chapter::List_Chapter()
 {
-    head=nullptr;
-    tail=nullptr;
+    this->head=nullptr;
+    this->tail=nullptr;
+    List_Creation();
+
 }
 
 List_Chapter::~List_Chapter()
@@ -29,22 +29,49 @@ List_Chapter::~List_Chapter()
     //dtor
 }
 
-void List_Chapter::Chapter_Adding(struct Dialog NL)
+void List_Chapter::Chapter_Adding(List_Dialog ND)
 {
-    struct Capitol *tmp=new struct Capitol;
-    tmp->L=NL;
-    tmp->next=nullptr;
+    struct Capitol *temp=new struct Capitol;
+
+    temp->D=ND;
+
+    temp->next=nullptr;
+
     if(this->head==nullptr)
     {
-        head=tmp;
-        tail=tmp;
-        tmp=nullptr;
+        this->head=temp;
+        this->tail=temp;
     }
     else
     {
-        tail->next=tmp;
-        tail=tmp;
+        this->tail->next=temp;
+        this->tail=temp;
     }
 
 }
+
+void List_Chapter::List_Creation()
+{
+    string *chapters_file_names[100];
+    std::ifstream f("Project_Quest_Story\\Story_Chapters.txt");
+    unsigned int k;
+    f>>k;
+
+    for(uint i=0;i<k;i++)
+    {
+        chapters_file_names[i]=new string;
+        f>>*chapters_file_names[i];
+
+    }
+
+    for(uint i=0;i<k;i++)
+    {
+        List_Dialog *PH;
+        PH=new List_Dialog(*chapters_file_names[i]);
+        Chapter_Adding(*PH);
+    }
+
+}
+
+
 

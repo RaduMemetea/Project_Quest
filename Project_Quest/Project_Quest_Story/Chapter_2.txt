@@ -1,7 +1,8 @@
-100000	101000 0 0	Chapter 1: Awakening!
-101000	102000 0 0	(feminine voice): Ooh…!
-102000	103000 0 0	: Good morning!	
-103000	103100 103200 0	: My name is Selene, I found you near the village coast unconscious \n and I brought you to my home and treated your wound, did you sleep well?	
+1
+200000	101000 0 0	Chapter_2: Awakening!
+101000	102000 0 0	(feminine_voice): Ooh…!
+102000	103000 0 0	~: Good morning!	
+103000	103100 103200 0	~: My name is Selene, I found you near the village coast unconscious \n and I brought you to my home and treated your wound, did you sleep well?	
 103100	103101 0 0	A: Yeah.
 103101	103102 0 0	Selene: Glad to hear that!
 103102	103201 0 0	(Player): By the way, where are we?
@@ -11,27 +12,27 @@
 103203	103204 0 0	(Player): But I was at MIlidonya magic school on Mount Wan.	
 103204	103205 0 0	Selene: Mount Wan!?
 103205	104000 0 0	Selene: But Mount Wan is very far, in the Lorean kingdom.
-104000	105000 0 0	(Boy-ish voice): What are you two talking about?
-105000	106000 0 0	A cat appeared.
+104000	105000 0 0	(Boy-ish_voice): What are you two talking about?
+105000	106000 0 0	0: -A cat appeared.-
 106000	107000 0 0	Selene(surprised): What!? 
-107000	108000 0 0	: A talking cat?
-108000	108100 108200 0	(The cat): (Player), did you remember what happened with you before you arrived here?
+107000	108000 0 0	Selene: A talking cat?
+108000	108100 108200 0	(The_cat): (Player), did you remember what happened with you before you arrived here?
 108100	108101 0 0	A: Who are you?
-108101	108102 0 0	(The Cat): Hahahaha… did you really forgot my name!?
-108102	109000 0 0	: I’m Kuro, your familiar.
+108101	108102 0 0	(The_Cat): Hahahaha… did you really forgot my name!?
+108102	109000 0 0	~: I’m Kuro, your familiar.
 108200	108201 0 0	B: I can’t remember.
 108201	108202 0 0	Selene: Who are you?
-108202	109000 0 0	(The Cat): I’m (Player)’s familiar, Kuro!
+108202	109000 0 0	(The_Cat): I’m (Player)’s familiar, Kuro!
 109000	110000 0 0	(Guards): I think this is the place!
 110000	111000 0 0	Kuro: Crap, let’s get out of here (Player)!
-111000	112000 0 0	: I’ll explain latter.
-112000	0 0 0	Selene: There’s an exit on the back, go through there.
+111000	112000 0 0	~: I’ll explain latter.
+112000	200000 0 0	Selene: There’s an exit on the back, go through there.
 
-113000	~:(After escaping the guards and finding a safe place)	10500 10600 10700
-103100	A: …	10501 0 0
-103101	Kuro: I think I should tell you what is happening….	10014 0 0
-103200	B: Care to explain what is happening?	10014 0 0
-103300	C: Why did we ran from the guards?	10014 0 0
+113000	0: -After escaping the guards and finding a safe place-	10500 10600 10700
+113100	A: …	10501 0 0
+113101	Kuro: I think I should tell you what is happening….	10014 0 0
+113200	B: Care to explain what is happening?	10014 0 0
+113300	C: Why did we ran from the guards?	10014 0 0
 114000	Kuro: You are wanted as the destroyer of the Magic School.	10015 0 0
 115000	(Player): What!?	10016 0 0
 116000	: Why me, what happened.	10017 0 0	
