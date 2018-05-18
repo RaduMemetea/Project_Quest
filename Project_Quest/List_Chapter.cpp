@@ -22,6 +22,8 @@ List_Chapter::List_Chapter()
     this->tail=nullptr;
     List_Creation();
 
+    std::cout<<this->head->D.afisare_id();
+
 }
 
 List_Chapter::~List_Chapter()
@@ -70,7 +72,6 @@ void List_Chapter::List_Creation()
         PH=new List_Dialog(*chapters_file_names[i]);
         Chapter_Adding(*PH);
     }
-
 }
 
 

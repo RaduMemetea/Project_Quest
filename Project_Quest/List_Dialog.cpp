@@ -24,6 +24,7 @@ List_Dialog::List_Dialog(string chapter_file_name)
 {
     this->head=nullptr;
     Lista_initiala(chapter_file_name);
+
 }
 
 List_Dialog::~List_Dialog()

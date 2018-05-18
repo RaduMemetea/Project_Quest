@@ -7,6 +7,7 @@
 #include "Enemy.h"
 #include "List_Chapter.h"
 #include "List_Dialog.h"
+#include "RNG_Dice.h"
 
 using std::cout;
 using std::cin;
@@ -194,10 +195,12 @@ bool Fight(player p)
 }
 
 
-bool test(player p)
+bool test()
 {
-    Enemy e;
-    std::cout<<e.E_Name;
+    Enemy *e=new Enemy();
+    std::cout<<e->E_Name;
+    delete e;
+    return 1;
 
 }
 
@@ -223,7 +226,7 @@ int main()
 {
     system("color A");
 
-    List_Chapter C1;
+    RNG_Dice d;
 
 }
 

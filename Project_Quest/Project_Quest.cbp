@@ -38,6 +38,8 @@
 		<Unit filename="List_Chapter.h" />
 		<Unit filename="List_Dialog.cpp" />
 		<Unit filename="List_Dialog.h" />
+		<Unit filename="RNG_Dice.cpp" />
+		<Unit filename="RNG_Dice.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="player.cpp" />
 		<Unit filename="player.h" />

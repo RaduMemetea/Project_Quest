@@ -7,10 +7,10 @@
 	<string>
 	<iostream>
 
-1525276408 c:\users\radum\documents\github\project_quest\project_quest\enemy.h
+1526475707 c:\users\radum\documents\github\project_quest\project_quest\enemy.h
 	<string>
 
-1525613994 source:c:\users\radum\documents\github\project_quest\project_quest\list_chapter.cpp
+1525871672 source:c:\users\radum\documents\github\project_quest\project_quest\list_chapter.cpp
 	"List_Chapter.h"
 	<iostream>
 	<string>
@@ -31,7 +31,7 @@
 1525555771 c:\users\radum\documents\github\project_quest\project_quest\player.h
 	<string>
 
-1525608998 source:c:\users\radum\documents\github\project_quest\project_quest\main.cpp
+1526477931 source:c:\users\radum\documents\github\project_quest\project_quest\main.cpp
 	<iostream>
 	<string>
 	<bits/stdc++.h>
@@ -39,14 +39,22 @@
 	"Enemy.h"
 	"List_Chapter.h"
 	"List_Dialog.h"
+	"RNG_Dice.h"
 
 1525613994 c:\users\radum\documents\github\project_quest\project_quest\list_dialog.h
 	<string>
 
-1525612567 source:c:\users\radum\documents\github\project_quest\project_quest\list_dialog.cpp
+1525871672 source:c:\users\radum\documents\github\project_quest\project_quest\list_dialog.cpp
 	"List_Dialog.h"
 	<string>
 	<fstream>
 	<iostream>
-	"player.h"
+
+1526479317 c:\users\radum\documents\github\project_quest\project_quest\rng_dice.h
+
+1526477951 source:c:\users\radum\documents\github\project_quest\project_quest\rng_dice.cpp
+	"RNG_Dice.h"
+	<random>
+	<time.h>
+	<iostream>
 

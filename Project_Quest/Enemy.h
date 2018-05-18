@@ -15,7 +15,7 @@ class Enemy
         friend DAMAGE(player &,Enemy &,bool );///decide cat dmg da player(0)/enemy(1)
         friend int HEAL(player &p,Enemy &e,bool a);///decide cat heal primeste player(0)/enemy(1)
 
-            friend bool test(player p);
+            friend bool test();
 
     protected:
 
