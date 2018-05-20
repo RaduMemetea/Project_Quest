@@ -7,7 +7,6 @@
 
 using std::string;
 
-typedef unsigned int uint;
 
 struct Capitol
 {
@@ -16,20 +15,45 @@ struct Capitol
 
 };
 
-List_Chapter::List_Chapter()
+List_Chapter::List_Chapter(player *p)
 {
     this->head=nullptr;
     this->tail=nullptr;
-    List_Creation();
+    int k;
+    k=List_Creation(p);    ///creadre lista cu capitole si returnarea nr. de capitole
 
-    std::cout<<this->head->D.afisare_id();
-
+    Afisare(k,p);
 }
 
 List_Chapter::~List_Chapter()
 {
     //dtor
 }
+
+
+int List_Chapter::List_Creation(player *p)
+{
+    string *chapters_file_names[100];
+    std::ifstream f("Project_Quest_Story\\Story_Chapters.txt");
+    unsigned int k;
+    f>>k;
+
+    for(unsigned int i=0;i<k;i++)
+    {
+        chapters_file_names[i]=new string;
+        f>>*chapters_file_names[i];
+
+    }
+
+    for(unsigned int i=0;i<k;i++)
+    {
+        List_Dialog *PH;
+        PH=new List_Dialog(*chapters_file_names[i],p);
+        Chapter_Adding(*PH);
+    }
+    return k;
+}
+
 
 void List_Chapter::Chapter_Adding(List_Dialog ND)
 {
@@ -52,27 +76,17 @@ void List_Chapter::Chapter_Adding(List_Dialog ND)
 
 }
 
-void List_Chapter::List_Creation()
+void List_Chapter::Afisare(int k,player *p)
 {
-    string *chapters_file_names[100];
-    std::ifstream f("Project_Quest_Story\\Story_Chapters.txt");
-    unsigned int k;
-    f>>k;
+    struct Capitol *tHead;
+    tHead=this->head;
 
-    for(uint i=0;i<k;i++)
+    for(int i=0;i<k;i++)
     {
-        chapters_file_names[i]=new string;
-        f>>*chapters_file_names[i];
-
-    }
-
-    for(uint i=0;i<k;i++)
-    {
-        List_Dialog *PH;
-        PH=new List_Dialog(*chapters_file_names[i]);
-        Chapter_Adding(*PH);
+        tHead->D.Afisare(p);
+        if(tHead->next!=nullptr)
+            tHead=tHead->next;
+        else
+            break;
     }
 }
-
-
-

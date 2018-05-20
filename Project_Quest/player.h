@@ -11,17 +11,22 @@ class player
         player();
         virtual ~player();
 
-        void afis();
-        void preluare_nou();
+        int r_HP_B();
+        int r_HP_P();
+        std::string r_Name();
+        int r_Money();
+        short r_Wmin();
+        short r_WMax();
+        short r_Armor();
+
+        void Heal(int p);
+        void Damage(int d);
         void point_to_HP();/// transforma punctele de viata(HP_P) intr-o viata plina(HP_B)
-
-        friend bool Fight(player );
-        friend DAMAGE(player &,Enemy &,bool );///decide cat dmg da player(0)/enemy(1)
-        friend int HEAL(player &p,Enemy &e,bool a);///decide cat heal primeste player(0)/enemy(1)
-    friend bool test(player p);
-
+        void Set_Money(int g);
+        void Set_W_DMG(int Min, int Max);
 
     protected:
+        void set_Nume();
 
     private:
         std::string Name;
