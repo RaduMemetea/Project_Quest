@@ -1,7 +1,7 @@
 #ifndef LIST_DIALOG_H
 #define LIST_DIALOG_H
-#include <string>
 
+#include <string>
 #include "player.h"
 
 class List_Dialog
@@ -18,11 +18,11 @@ class List_Dialog
     private:
         struct Dialog *head;
 
-        void Lista_initiala(std::string chapter_file_name,std::string Player_name);
-        void make_link(struct Dialog *n1, struct Dialog *n2, std::string n1_abc);/// n1- nod initial, n2- nod urmator, n1_abc- pozitia de legatura a lui n2
-        void aranjeaza_lista(unsigned int ch,std::string chapter_file_name);
-        void modifica_caractere();
-        void modifica_caractere_player_name(std::string Player_name);
+        void Lista_initiala(std::string chapter_file_name,std::string Player_name); ///Creaza o lista dublu inlantuita cu nodurile din fisierul 'chapter_file_name' + '.txt'
+        void make_link(struct Dialog *n1, struct Dialog *n2, std::string n1_abc);   /// n1- nod initial, n2- nod urmator, n1_abc- pozitia de legatura a lui n2
+        void aranjeaza_lista(std::string chapter_file_name);   /// Face legaturile dintre noduri cu informatii din 'chapter_file_name' + '_Links.txt'
+        void modifica_caractere();  /// Inlocueste int toata lista "_" cu ' ', "0:" cu '' si "~:" cu Voce -a precedenta
+        void modifica_caractere_player_name(std::string Player_name);   /// Inlocuieste int toata lista "(Player)" cu Numele jucatorului
 
         char HIGH(char);
 

@@ -3,12 +3,10 @@
 #include <string>
 #include <fstream>
 #include <bits/stdc++.h>
+#include <unistd.h>
 
+#include "Fight.h"
 
-int DAMAGE(player &p,Enemy &e,bool a);
-int HEAL(player &p,Enemy &e,bool a);
-void Dead_End();
-bool Fight(player *pp);
 void Create_node(int parent[], int i, Node *created[], Node **root);
 
 struct Node
@@ -126,12 +124,15 @@ bool verificare_tip_nod(int ID,int tip)
         int k;
         f>>k;/// elemente de tipul k pe linia i
         int elem[k]={};
+
         for(int j=0;j<k;j++)
             f>>elem[j];
+
         for(int j=0;j<k;j++)
             if(elem[j] == ID && i==tip)
                 return 1;
     }
+
     return 0;
 
 }
@@ -213,7 +214,7 @@ void Maze::afis(player *pp)
 
     for(;pl != nullptr;)
     {
-        std:: string hp={"^                 "+std::to_string(pas)+"                      ^\n"};
+        std:: string hp={"^                  "+std::to_string(pas)+"                     ^\n"};
         if(hp.size()>h0.size())
         {
             hp[h0.size()-2]='^';
@@ -256,7 +257,8 @@ void Maze::afis(player *pp)
             std::cin.ignore();
             pl=pl->prev;
             pas++;
-            Fight(&p)? p.Set_Money(3) : p.Set_Money(0);
+            Fight f(&p);
+            f.Start()? p.Set_Money(3) : p.Set_Money(0);
             std::cin.ignore();
             std::cin.ignore();
 
@@ -299,6 +301,7 @@ void Maze::afis(player *pp)
         {
             system("cls");
             std::cout<<hz<<hp;
+            usleep(999999);/// 1 sec
             break;
         }
 
@@ -310,165 +313,6 @@ std::string HIGH(std::string b)
 {
     b[0]=std::toupper(b[0]);
     return b;
-}
-
-
-void Dead_End()
-{
-    std::cout<<"\nEnd Of You're Jurney!";
-    exit(1);
-}
-
-int DAMAGE(player &p,Enemy &e,bool a) ///decide cat dmg da player(0)/enemy(1)
-{
-
-    if(a)///enemy
-    {
-        int x=rand()%(e.r_WMax()-e.r_Wmin()+1)+e.r_Wmin();
-        int xr=x-p.r_Armor()*x/100;
-        return xr;
-
-    }
-    else///player
-    {
-        int x=rand()%(p.r_WMax()-p.r_Wmin()+1)+p.r_Wmin();
-        int xr=x-e.r_Armor()*x/100;
-        return xr;
-    }
-}
-
-int HEAL(player &p,Enemy &e,bool a)///decide cat heal primeste player(0)/enemy(1)
-{
-    if(!a)///player
-    {
-        int r=e.r_WMax()/2+rand()%((e.r_WMax()+3)/2);
-        return r;
-    }
-    else///enemy
-    {
-        int r=p.r_WMax()/2+rand()%((p.r_WMax()+1)/2);
-        return r;
-    }
-}
-
-
-bool Fight(player *pp)
-{
-    player &p=*pp;
-    Enemy e;
-    if(p.r_HP_B()<=50)
-    {
-        std::cout<<"You Have "<<p.r_HP_B()<<" Health \nWanna spend 3 Gold to heal? [Y/N]";
-        std::string c;
-        std::cin>>c;
-        if(HIGH(c) == "Y")
-        {
-            if(p.r_Money()-3>=0)
-                {
-                    p.Set_Money(-3);
-                    p.Heal(100);
-                }
-            else
-            {
-                std::cout<<"Not Enough Money!\n";
-            }
-
-        }
-    }
-    std::cout<<p.r_Name()<<"'s Hp: "<<p.r_HP_B()<<" Enemy Hp: "<<e.r_HP();
-
-    while(p.r_HP_B()>0 && e.r_HP()>0)
-    {
-        std::string choice;
-
-            std::cout<<"\nAttack(A)/Heal(H): ";std::cin>>choice;
-
-            system("cls");
-        std::cout<<p.r_Name()<<"'s Hp: "<<p.r_HP_B()<<" Enemy Hp: "<<e.r_HP()<<'\n';
-
-        if(HIGH(choice) =="A")
-        {
-            int d=0;
-            d=DAMAGE(p,e,0);
-            std::cout<<'\n'<<p.r_Name()<<" dealt "<<d<<" damage to "<<e.r_Name();
-            e.Damage(d);
-        }
-
-        if(HIGH(choice) =="H")
-        {
-            if(p.r_HP_B()<100)
-                {
-                    int r;
-                    r=HEAL(p,e,0);
-                    if(p.r_HP_B()+r<=100)
-                        {
-                            std::cout<<'\n'<<p.r_Name()<<" recovered "<<r<<" HP points";
-                            p.Heal(r);
-                        }
-                        else
-                        if(p.r_HP_B()+r>100)
-                            {
-                                std::cout<<'\n'<<p.r_Name()<<" recovered "<<100-p.r_HP_B()<<" HP points";
-                                p.Heal(100-p.r_HP_B());
-                            }
-                }
-        }
-
-        if(e.r_HP()>0)
-        {
-            int ec=((rand()+rand()-rand())*rand())%2;
-
-            if(ec==1 && e.r_HP()==100)
-                ec=0;
-
-            if(ec)/// 1 heal
-            {
-                int r=HEAL(p,e,1);
-                if(e.r_HP()+r<=100)
-               {
-                    std::cout<<'\n'<<e.r_Name()<<" recovered "<<r<<" HP points";
-                    e.Heal(r);
-               }
-               else
-                if(e.r_HP()+r>100)
-               {
-                    std::cout<<'\n'<<e.r_Name()<<" recovered "<<100-e.r_HP()<<" HP points";
-                    e.Heal(100-e.r_HP());
-               }
-
-            }
-            else/// 0 attack
-            {
-                int de=0;
-                de=DAMAGE(p,e,1);
-                std::cout<<'\n'<<e.r_Name()<<" dealt "<<de<<" damage to "<<p.r_Name();
-                p.Damage(de);
-
-
-            }
-        }
-
-    }
-
-    if(p.r_HP_B()<=0)
-    {
-        if(p.r_HP_P()>0)
-        {
-            p.point_to_HP();
-            std::cout<<"\nYou lost 1 life, you have "<<p.r_HP_P()<<" left\n";
-            return 0;
-        }
-        else
-        {
-            Dead_End();
-        }
-    }
-    else
-        if(e.r_HP()<=0)
-        {
-            std::cout<<"\nYou Won against "<<e.r_Name()<<'\n';
-        }
-    return 1;
 }
 
 

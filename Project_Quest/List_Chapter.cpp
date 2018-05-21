@@ -1,12 +1,9 @@
 #include "List_Chapter.h"
+
 #include <iostream>
 #include <string>
 #include <fstream>
-
 #include "List_Dialog.h"
-
-using std::string;
-
 
 struct Capitol
 {
@@ -33,14 +30,15 @@ List_Chapter::~List_Chapter()
 
 int List_Chapter::List_Creation(player *p)
 {
-    string *chapters_file_names[100];
+    std::string *chapters_file_names[100];
     std::ifstream f("Project_Quest_Story\\Story_Chapters.txt");
+
     unsigned int k;
     f>>k;
 
     for(unsigned int i=0;i<k;i++)
     {
-        chapters_file_names[i]=new string;
+        chapters_file_names[i]=new std::string;
         f>>*chapters_file_names[i];
 
     }
@@ -49,17 +47,18 @@ int List_Chapter::List_Creation(player *p)
     {
         List_Dialog *PH;
         PH=new List_Dialog(*chapters_file_names[i],p);
-        Chapter_Adding(*PH);
+        Chapter_Adding(PH);
     }
+
     return k;
 }
 
 
-void List_Chapter::Chapter_Adding(List_Dialog ND)
+void List_Chapter::Chapter_Adding(List_Dialog *ND)
 {
     struct Capitol *temp=new struct Capitol;
 
-    temp->D=ND;
+    temp->D=*ND;
 
     temp->next=nullptr;
 

@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Enemy.cpp" />
 		<Unit filename="Enemy.h" />
+		<Unit filename="Fight.cpp" />
+		<Unit filename="Fight.h" />
 		<Unit filename="List_Chapter.cpp" />
 		<Unit filename="List_Chapter.h" />
 		<Unit filename="List_Dialog.cpp" />

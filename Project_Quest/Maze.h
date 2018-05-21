@@ -8,8 +8,8 @@ class Maze
     public:
         Maze();
         virtual ~Maze();
+
         void afis(player *p);
-        void aff(player *p);
 
     protected:
 

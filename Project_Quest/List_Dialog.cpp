@@ -1,9 +1,10 @@
 #include "List_Dialog.h"
+
 #include <string>
 #include <fstream>
 #include <iostream>
 #include <bits/stdc++.h>
-
+#include <unistd.h>
 #include "Maze.h"
 
 using std::string;
@@ -26,7 +27,6 @@ List_Dialog::List_Dialog(string chapter_file_name,player *p)
 {
     this->head=nullptr;
     Lista_initiala(chapter_file_name,p->r_Name());///Creaza lista initiala cu toate caracteristicile unui nod
-
 }
 
 List_Dialog::~List_Dialog()
@@ -38,9 +38,6 @@ List_Dialog::~List_Dialog()
 void List_Dialog::Lista_initiala(string chapter_file_name,string Player_name)
 {
     std::ifstream f(chapter_file_name+".txt");
-
-    unsigned int ch;
-    f>>ch;
 
     struct Dialog *first_head;
 
@@ -73,16 +70,17 @@ void List_Dialog::Lista_initiala(string chapter_file_name,string Player_name)
             this->head=this->head->next_A;
 
         }
-    }while(this->head->ID_NextA!=0);
+    }while(this->head->ID_Nod != 0);
 
     this->head=first_head;
+
     modifica_caractere();
     modifica_caractere_player_name(Player_name);
 
-    aranjeaza_lista(ch,chapter_file_name);  ///Cauta nodurile si modifica legaturile dintre noduri
+    aranjeaza_lista(chapter_file_name);  ///Cauta nodurile si modifica legaturile dintre noduri
 }
 
-void List_Dialog::aranjeaza_lista(unsigned int ch,string chapter_file_name)
+void List_Dialog::aranjeaza_lista(string chapter_file_name)
 {
     std::ifstream f(chapter_file_name+"_Links.txt");
 
@@ -95,7 +93,7 @@ void List_Dialog::aranjeaza_lista(unsigned int ch,string chapter_file_name)
         f>>n2>>c;
         L=this->head;
 
-        for(;L->ID_NextA!=0;L=L->next_A)
+        for(;L->ID_NextA !=0 ;L=L->next_A)
         {
             if(L->ID_Nod==n1)
                 n_1=L;
@@ -152,7 +150,7 @@ void List_Dialog::modifica_caractere()
 
 }
 
-void List_Dialog::modifica_caractere_player_name(std::string name)
+void List_Dialog::modifica_caractere_player_name(string name)
 {
     struct Dialog *L;
     L=this->head;
@@ -179,65 +177,103 @@ char List_Dialog::HIGH(char b)
 }
 
 
+void style(string a)
+{
+    int k=60;
+    int d=0;
+    for(unsigned int i=0;i<=a.size();i++)
+    {
+        if(d>=k)
+        {
+            if(a[d] == ' ')
+            {
+                std::cout<<'\n';
+                d=0;
+            }
+            else
+                d++;
+        }
+        else
+            d++;
+        std::cout<<a[i];
+        usleep(60000);
+    }
+    usleep(800000);
 
+    std::cout<<'\n';
+}
 
 void List_Dialog::Afisare(player *p)
 {
     struct Dialog *tHead=this->head;
-    std::cout<<tHead->Voice<<tHead->Text<<'\n';
 
-    if(tHead->next_A!=nullptr)
+///      Afisare Titlu Capitol           ///
+
+    std::cout<<tHead->Voice; style(tHead->Text);
+        usleep(999999);/// 1 sec
+        system("cls");
         tHead=tHead->next_A;
-    else
-        exit(0);
-    /// Afisare Titlu Capitol
+
+/// -------------------------------------- ///
 
     do
     {
-        if(tHead->ID_NextB==0)
-        {
-            std::cout<<tHead->Voice<<tHead->Text<<'\n';
-            tHead=tHead->next_A;
+     ///     Zona De Verificare Noduri Speciale   ///
 
+            if(tHead->ID_Nod == 8023 )  /// 8023 cod pentru labirint
+               {
+                    std::cin.ignore();
+                    Maze a;
+                    a.afis(p);
+                    std::cin.ignore();
+                    system("cls");
+               }
+
+
+    /// --------------------------------------------- ///
+
+       if(tHead->ID_NextB==0)   /// noduri de tip simplu fara alegeri
+        {
+            std::cout<<tHead->Voice; style(tHead->Text);
+            tHead=tHead->next_A;
+            usleep(999999);
+            system("cls");
 
         }
-///     Zona De Verificare Noduri   ///
-/// Imposibil de accesat primele 2 dialoguri
 
-        if(tHead->ID_Nod == 0)
-           {
-                std::cin.ignore();
-                Maze a;
-                a.afis(p);
-                std::cin.ignore();
-                system("cls");
-           }
-
-
-/// --------------------------------------------- ///
-        if(tHead->ID_NextB!=0)
+        if(tHead->ID_NextB != 0)    /// nod cu alegeri
         {
-            std::cout<<tHead->Voice<<tHead->Text<<'\n';
+            std::cout<<tHead->Voice; style(tHead->Text);
 
             std::cout<<tHead->next_A->Voice<<tHead->next_A->Text<<'\n'
                      <<tHead->next_B->Voice<<tHead->next_B->Text<<'\n';
+
             if(tHead->ID_NextC != 0)
-            std::cout<<tHead->next_C->Voice<<tHead->next_C->Text<<'\n';
+                std::cout<<tHead->next_C->Voice<<tHead->next_C->Text<<'\n';
+
             std::cout<<"Choice: ";
             char C;
-                std::cin>>C;
-                if(HIGH(C)=='A')
+            int k;
+
+            do
                 {
-                    tHead=tHead->next_A->next_A;
-                }
-                else if(HIGH(C)=='B')
-                {
-                    tHead=tHead->next_B->next_A;
-                }
-                else if(HIGH(C)=='C')
-                {
-                    tHead=tHead->next_C->next_A;
-                }
+                    std::cin>>C;
+                    (HIGH(C) == 'A' || HIGH(C) == 'B' || ( (tHead->ID_NextC != 0) && HIGH(C) == 'C') )? k=0:k=1;
+                }while(k);
+
+            if(HIGH(C)=='A')
+            {
+                tHead=tHead->next_A->next_A;
+            }
+            else if(HIGH(C)=='B')
+            {
+                tHead=tHead->next_B->next_A;
+            }
+            else if( (tHead->ID_NextC != 0) && HIGH(C) == 'C')
+            {
+                tHead=tHead->next_C->next_A;
+            }
+            system("cls");
         }
-    }while(tHead->ID_NextA!=0);
+    }while(tHead->ID_NextA != 0);
 }

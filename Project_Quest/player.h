@@ -11,22 +11,22 @@ class player
         player();
         virtual ~player();
 
-        int r_HP_B();
-        int r_HP_P();
-        std::string r_Name();
-        int r_Money();
-        short r_Wmin();
-        short r_WMax();
-        short r_Armor();
+        int r_HP_B();   ///returneaza HP_B
+        int r_HP_P();   ///returneaza HP_P
+        std::string r_Name();   ///returneaza Numele
+        int r_Money();   ///returneaza Money
+        short r_Wmin();   ///returneaza Weapon_DMG_Min
+        short r_WMax();   ///returneaza Weapon_DMG_Max
+        short r_Armor();   ///returneaza Armor
 
-        void Heal(int p);
-        void Damage(int d);
-        void point_to_HP();/// transforma punctele de viata(HP_P) intr-o viata plina(HP_B)
-        void Set_Money(int g);
-        void Set_W_DMG(int Min, int Max);
+        void Heal(int p);   /// Adauga 'p' la HP_B
+        void Damage(int d); /// Scade 'd' din HP_B
+        void point_to_HP(); /// transforma punctele de viata(HP_P) intr-o viata plina(HP_B)
+        void Set_Money(int g);  /// Adauga 'g' la Money
+        void Set_W_DMG(int Min, int Max);   /// Adauga 'Min' Weapon_DMG_Min la si 'Max' la Weapon_DMG_Max
 
     protected:
-        void set_Nume();
+        void set_Name();
 
     private:
         std::string Name;

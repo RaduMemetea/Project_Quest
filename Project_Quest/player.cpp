@@ -12,10 +12,10 @@ player::player()
     this->HP_P=4;
     this->HP_B=100;
     this->Money=0;
-    this->Weapon_DMG_Min=3+rand()%5;
-    this->Weapon_DMG_Max=10+rand()%8;
-    this->Armor=10;
-    set_Nume();
+    this->Weapon_DMG_Min=4+rand()%5;
+    this->Weapon_DMG_Max=10+rand()%8;   ///Damage intre 4-8 si 10-17
+    this->Armor=10+ rand()%6;   /// Armura intre 10 si 15
+    set_Name();
 
 }
 
@@ -24,7 +24,7 @@ player::~player()
     //dtor
 }
 
-void player::set_Nume()
+void player::set_Name()
 {
     std::string name;
     std::cout<<"Name: ";
@@ -92,6 +92,7 @@ void player::Set_Money(int g)
         std::cout<<"\nNot Enough Money!\n";
     }
 }
+
 void player::Set_W_DMG(int Min, int Max)
 {
     if(this->Weapon_DMG_Max+Max >= this->Weapon_DMG_Min)
