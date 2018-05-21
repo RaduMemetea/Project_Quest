@@ -1,16 +1,16 @@
 #include <iostream>
-#include "player.h"
 #include <string>
 #include <bits/stdc++.h>
+#include <unistd.h>
 
-using namespace std;
+#include "player.h"
+#include "List_Chapter.h"
 
 int main()
 {
     system("color A");
-    player a;
-    a.afis();
-
-    return 0;
+    player p;
+    usleep(250000);
+    List_Chapter c1(&p);
 }
 

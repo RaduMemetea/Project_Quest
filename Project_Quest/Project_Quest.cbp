@@ -32,6 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Enemy.cpp" />
+		<Unit filename="Enemy.h" />
+		<Unit filename="Fight.cpp" />
+		<Unit filename="Fight.h" />
+		<Unit filename="List_Chapter.cpp" />
+		<Unit filename="List_Chapter.h" />
+		<Unit filename="List_Dialog.cpp" />
+		<Unit filename="List_Dialog.h" />
+		<Unit filename="Maze.cpp" />
+		<Unit filename="Maze.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="player.cpp" />
 		<Unit filename="player.h" />

@@ -1,0 +1,71 @@
+100000	101000 0 0	Chapter_1: Awakening!
+101000	102000 0 0	(feminine_voice): Ooh...!
+102000	103000 0 0	~: Good morning!	
+103000	103100 103200 0	~: My name is Selene, I found you near the village coast unconscious and I brought you to my home and treated your wound, did you sleep well?	
+103100	103101 0 0	A: Yeah.
+103101	103102 0 0	Selene: Glad to hear that!
+103102	103201 0 0	(Player): By the way, where are we?
+103200	103201 0 0	B: Where am I?
+103201	103202 0 0	Selene: We are in the Rein kingdom, in the west district.
+103202	103203 0 0	(Player): What!?
+103203	103204 0 0	(Player): But I was at MIlidonya magic school on Mount Wan.	
+103204	103205 0 0	Selene: Mount Wan!?
+103205	104000 0 0	Selene: But Mount Wan is very far, in the Lorean kingdom.
+104000	105000 0 0	(Boy-ish_voice): What are you two talking about?
+105000	106000 0 0	0: -A cat appeared.-
+106000	107000 0 0	Selene(surprised): What!? 
+107000	108000 0 0	Selene: A talking cat?
+108000	108100 108200 0	(The_cat): (Player), did you remember what happened with you before you arrived here?
+108100	108101 0 0	A: Who are you?
+108101	108102 0 0	(The_Cat): Hahahaha... did you really forgot my name!?
+108102	109000 0 0	~: I`m Kuro, your familiar.
+108200	108201 0 0	B: I can`t remember.
+108201	108202 0 0	Selene: Who are you?
+108202	109000 0 0	(The_Cat): I`m (Player)`s familiar, Kuro!
+109000	110000 0 0	(Guards): I think this is the place!
+110000	111000 0 0	Kuro: Crap, let`s get out of here (Player)!
+111000	112000 0 0	~: I`ll explain latter.
+112000	113000 0 0	Selene: There`s an exit on the back, go through there.
+
+113000	113100 113200 113300	0: -After escaping the guards and finding a safe place-
+113100	113101 0 0	A: ...
+113101	114000 0 0	Kuro: I think I should tell you what is happening....
+113200	114000 0 0	B: Care to explain what is happening?
+113300	114000 0 0	C: Why did we ran from the guards?
+114000	115000 0 0	Kuro: You are wanted as the destroyer of the Magic School.
+115000	116000 0 0	(Player): What!?
+116000	117000 0 0	~: Why me, what happened.
+117000	118000 0 0	Kuro: Let me continue.
+118000	119000 0 0	~: As I told you, you destroyed Milidonya when you experimented with portals.
+119000	119100 119200 119300	~: It seems someone from the Underworld manage to intercept the wavelings of your portal and escaped through it.
+119100	119101 0 0	A: But that`s impossible!
+119101	120000 0 0 	Kuro: You could say that but,
+119200	119201 0 0 	B: No way, I was very careful with that!
+119201	120000 0 0 	Kuro: Even so, you still messed up something or,
+119300	119301 0 0 	C: Wasn`t my fault!
+119301	120000 0 0 	Kuro: Maybe, but you and I were the only ones in that room at the time,
+120000	121000 0 0 	Kuro: what if someone in the Underworld was that powerful that cold do that?
+121000	122000 0 0 	~: Have you think about it?
+122000	123000 0 0 	~: And after that there was chaos in the school, the Headmaster and the other Magicians tried to protect the other students and send them somewhere safe but, \n the Demon aura made the portals acted strange.
+123000	124000 0 0 	~: We are lucky to be alive now, hope the others are safe to.
+124000	125000 0 0 	Kuro: Anyway, I think we should find Yveta, we need her powers.
+125000	126000 0 0 	(Player): Who?
+126000	127000 0 0 	Kuro: Your wife!
+127000	127100 127200 127300	~: Don`t tell me you forgot about her.
+127100	127101 0 0	A: O-Of course not!
+127101	128000 0 0	Kuro: Liar.
+127200	127201 0 0	B: Maybe.
+127201	128000 0 0	Kuro: You`re such a dead man when we found her.
+127300	127301 0 0	C: I wish I could.
+127301	127302 0 0	Kuro: Maybe I should tell her that!
+127302	127303 0 0	(Player): D-Do not do that,
+127303	128000 0 0	~: We`ll both die then!
+128000	128000 0 0	Kuro: We need to go East, I smell her aura from there!
+129000	0 0 0	(Player): Fine, let`s go then!
+
+0	0	0	0	0	0
+
+
+
+
+/// cand se face legaturile fa prima oara cea de la B apoi de la A
