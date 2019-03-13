@@ -1,6 +1,6 @@
 # Project_Quest
 
-    This project is a short adventure game with multiple choises when it comes to the story part, 
+    This project is a short adventure game with multiple choices when it comes to the story part, 
     it incluses a labirinth as a mini gamemode to complement the other parts.
  
 The program has internaly 4 main components and 2 secondary ones, <br>
