@@ -28,7 +28,7 @@ For the program to work it needs minimum 5 external files:<br>
             line 2-7: #1 how many nodes and #2 nodes ID |
                       ex: 3(nr. of nodes) 14 26 55(tree ID values +1) [an complete example in the project files]<br><br>
     3. A Project_Quest_Story folder with<br>
-       a) Story_Chapters.txt in which you tell how many files you are working with and their paths (no extension mentioned int the path             here but the file should have .txt) on different lines.<br><br>
+       a) Story_Chapters.txt in which you tell how many files you are working with and their paths (no extension mentioned in the path             here but the file should have .txt) on different lines.<br><br>
        b) {chapter_name}.txt    each line has:  own ID, the next node ID, 0, 0 (if it's a choice node swap the 0's with the choice options node ID), the voice ({something}: will stay the same, ~: will repeat the last one, A/B/C: if a choice, (Player): will be swapped with the player name asked at the start of the program and 0: will set the voice to nothing), the text which can include "(Player)" and will be swapped with the player's name.<br><br>
           As the ID structure I used:<br>
             #1 digit the chapter number the next 2 the dialog line, next one the choice(if existed) number(1/2/3) and the last ones the choice dialog line ex: 109210  | 1-> chapter number, 09-> chapter main dialog line, 2-> second(B) option of the line 09, 10-> choice dialog line. or 115000 -> this is a main line with no choice parameters set.<br><br>
